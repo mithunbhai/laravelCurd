@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/deleteData/{id}', 'HomeController@deleteData');
+Route::get('/editData/{id}', 'HomeController@editData');
+Route::post('/updateData/{id}', 'HomeController@updateData');

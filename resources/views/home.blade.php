@@ -22,7 +22,7 @@
                             <td> {{ $value->email }}</td>
                             <td>
                                 <a href="deleteData/{{$value->id}}">Delete</a>
-                                <a onclick="check()" href="#">Click on me</a>
+                                <a href="editData/{{$value->id}}">Edit</a>
                             </td>
                         </tr>
                         @endforeach    

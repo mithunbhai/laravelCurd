@@ -26,15 +26,34 @@ class HomeController extends Controller
     {
         $user = User::get(); 
         return view('home', get_defined_vars());
+    } 
+
+    public function editData($id)
+    {
+        $user = User::find($id);
+        return view('edit', get_defined_vars());
+    }  
+
+    public function updateData($id, Request $req)
+    {
+        $user = User::find($id); 
+        $user->name = $req->input('name');
+        $user->save();
+        return redirect('home');
+        // echo 'Update successfully';
     }
 
 
     public function deleteData($id)
     {
-        $user=  User::find($id);
+        $user =  User::find($id);
+        // $user->name = 'Shakif';
+        // $user->save();
+
+        // die();
         $user->delete();
 
-        echo 'delete successfully';
+        // echo 'delete successfully';
         return redirect('home');
     }
 }
