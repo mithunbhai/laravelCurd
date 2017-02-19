@@ -38,6 +38,7 @@ class HomeController extends Controller
     {
         $user = User::find($id); 
         $user->name = $req->input('name');
+        $user->email = $req->input('email');
         $user->save();
         return redirect('home');
         // echo 'Update successfully';
